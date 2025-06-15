@@ -15,6 +15,54 @@ A lightweight utility to automate dataset preparation using LLMs and kaggle inte
 - 🔄 Integration with popular data science workflows
 - 📦 Built using [`uv`](https://github.com/astral-sh/uv) for fast, modern Python dependency management
 
+## Directory structure
+
+```
+llm-dataprep/
+├── .venv/                  # Virtual environment (already exists)
+├── .git/                   # Git repository (already exists)
+├── notebooks/             # Jupyter notebooks for exploration (already exists)
+├── src/                   # Main source code
+│   ├── __init__.py
+│   ├── kaggle/           # Kaggle integration module
+│   │   ├── __init__.py
+│   │   ├── client.py     # Kaggle API client
+│   │   └── downloader.py # Dataset download utilities
+│   ├── llm/              # LLM processing module
+│   │   ├── __init__.py
+│   │   ├── processor.py  # LLM data processing
+│   │   └── prompts.py    # LLM prompt templates
+│   └── pipeline/         # Data transformation pipeline
+│       ├── __init__.py
+│       ├── transformers.py
+│       └── validators.py
+├── tests/                # Test suite
+│   ├── __init__.py
+│   ├── test_kaggle/
+│   ├── test_llm/
+│   └── test_pipeline/
+├── data/                 # Data directory
+│   ├── raw/             # Raw downloaded datasets
+│   ├── processed/       # Processed datasets
+│   └── .gitkeep
+├── config/              # Configuration files
+│   ├── __init__.py
+│   └── settings.py      # Project settings and constants
+├── docs/               # Documentation
+│   ├── api/
+│   └── examples/
+├── main.py             # Main entry point (already exists)
+├── pyproject.toml      # Project configuration (already exists)
+├── README.md           # Project documentation (already exists)
+├── LICENSE             # License file (already exists)
+└── .python-version     # Python version file (already exists)
+```
+
+
+
+
+
+
 ## 📋 Prerequisites
 
 - Python 3.10 or higher
@@ -37,7 +85,7 @@ source .venv/bin/activate
 
 3. Install dependencies:
 ```bash
-uv pip install -r requirements.txt
+uv pip install -e ".[dev]"
 ```
 
 4. Set up Kaggle credentials:
